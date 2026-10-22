@@ -109,6 +109,8 @@ def update_toc(root=ROOT, write=False):
 
 
 def check(root=ROOT, allow_missing_artifacts=False):
+    # Match the canonical paths below, including Windows 8.3 temporary aliases.
+    root = root.resolve()
     _, chapters = load_book(root)
     errors = []
     chapter_paths = {c.path.resolve() for c in chapters}

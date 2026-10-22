@@ -77,6 +77,13 @@ class BookTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Broken link"):
             book.check(self.root)
 
+    def test_noncanonical_root_preserves_link_diagnostics(self):
+        (self.root / "docs/one.md").write_text("# One\n\n[Bad](missing.md)\n", encoding="utf-8")
+        # Resolved page paths and the root must use the same spelling. Windows
+        # temporary paths can also arrive as an 8.3 alias such as RUNNER~1.
+        with self.assertRaisesRegex(ValueError, "Broken link in docs"):
+            book.check(self.root / "docs" / "..")
+
     def test_broken_heading_anchor(self):
         (self.root / "docs/one.md").write_text("# One\n\n[Bad](../PLAN.md#absent)\n", encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Missing anchor"):
