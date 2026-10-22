@@ -91,6 +91,27 @@ def main():
         require(core.returncode == 0 and not core.stderr, core.stdout + core.stderr)
         print(core.stdout.strip())
 
+        runtime = base / "RuntimeLab/bin/Release/net10.0/RuntimeLab.dll"
+        runtime_expected = {
+            "19": "RuntimeLab\n42\nTrue\n7\n7\n1\n",
+            "20": "1\n0\n7\n",
+            "21": "Name\n0\nGreaterThan\nTrue\n4\n",
+            "23": "True\n42\nFalse\n9\n7\n",
+            "24": "ledger\nList\n0\n3\n5\n9\n7\n6\n",
+        }
+        for chapter, output in runtime_expected.items():
+            result = run(["dotnet", str(runtime), chapter])
+            require(result.returncode == 0 and normalize(result.stdout) == output and not result.stderr,
+                    f"RuntimeLab {chapter}: {result}")
+        for project in ("RuntimeChecks", "CompilerLab"):
+            result = run(["dotnet", str(base / f"{project}/bin/Release/net10.0/{project}.dll")])
+            require(result.returncode == 0 and result.stdout.startswith(f"PASS {project}:")
+                    and not result.stderr, result.stdout + result.stderr)
+            print(result.stdout.strip())
+        result = run(["dotnet", "run", "--file", "FileBased/hello.cs"], cwd=base, timeout=120)
+        require(result.returncode == 0 and normalize(result.stdout) == "file-based C# 14\n"
+                and not result.stderr, f"File-based app: {result}")
+
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)
 

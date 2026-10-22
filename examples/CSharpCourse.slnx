@@ -6,4 +6,7 @@
   <Project Path="ExpenseLedger.Memory/ExpenseLedger.Memory.csproj" />
   <Project Path="TypesAndQueries/TypesAndQueries.csproj" />
   <Project Path="CoreChecks/CoreChecks.csproj" />
+  <Project Path="RuntimeLab/RuntimeLab.csproj" />
+  <Project Path="RuntimeChecks/RuntimeChecks.csproj" />
+  <Project Path="CompilerLab/CompilerLab.csproj" />
 </Solution>

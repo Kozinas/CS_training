@@ -1,6 +1,6 @@
 # Запускаемые примеры C#
 
-Примеры относятся к написанным главам 01–18. Solution курса — [CSharpCourse.slnx](CSharpCourse.slnx).
+Примеры относятся к написанным главам 01–24. Solution курса — [CSharpCourse.slnx](CSharpCourse.slnx).
 Она независима от пользовательского ConsoleApp1 в корне.
 
 ## Запуск
@@ -13,6 +13,10 @@ dotnet run --project examples/Foundations -- 03
 dotnet run --project examples/ExpenseLedger -- labs/01-expense-ledger/data/valid.txt
 dotnet run --project examples/TypesAndQueries -- 18
 dotnet run --project examples/CoreChecks
+dotnet run --project examples/RuntimeLab -c Release -- 23
+dotnet run --project examples/RuntimeChecks -c Release
+dotnet run --project examples/CompilerLab -c Release
+dotnet run --file examples/FileBased/hello.cs
 python tools/verify.py
 ```
 
@@ -32,6 +36,10 @@ ExpenseLedger — полный образец L01. Стартовые услов
 | ExpenseLedger.Memory | Реализация хранения через Dictionary |
 | TypesAndQueries | Сценарии глав 11–18, включая C# 14 extension property |
 | CoreChecks | Контракты L02 на двух хранилищах, культурах и семантика языка |
+| RuntimeLab | Сценарии 19–21, 23–24; IL, ресурсы, reflection, span, unsafe, C# 14 |
+| RuntimeChecks | Владение, схемы метаданных, парсеры и семантика новых возможностей |
+| CompilerLab | Analyzer и incremental generator в собственном Roslyn-хосте; проверки и Emit |
+| FileBased/hello.cs | Отдельный пример запуска .cs, без проекта в solution |
 
 [Directory.Build.props](Directory.Build.props) задаёт net10.0, C# 14, nullable и ошибки при предупреждениях.
 [global.json](global.json) выбирает стабильный SDK 10.0 с допустимым обновлением feature band.
@@ -44,3 +52,24 @@ ExpenseLedger — полный образец L01. Стартовые услов
 
 Пример 09 создаёт собственный временный файл с уникальным именем, читает его и удаляет в finally.
 ExpenseLedger читает только переданный файл. Свои эксперименты выполняйте в work.
+
+## Дополнительные эксперименты
+
+RuntimeLab принимает 19, 20, 21, 23 и 24; глава 22 запускается через CompilerLab.
+Режим 19-il печатает IL маленького метода, а 23-alloc сравнивает выделения двух парсеров после прогрева.
+Точные IL-байты и количества выделенных байтов не являются переносимыми критериями прохождения тестов.
+Семантика парсеров проверяется отдельно, включая переполнение и три культуры.
+
+CompilerLab ссылается на Roslyn-сборки выбранного SDK через MSBuildSDKsPath.
+Он работает как обычное приложение net10.0 и запускает генератор/анализатор через API;
+он не устанавливается в IDE и не подключается как analyzer к остальным проектам.
+Это сохраняет офлайн-сборку. Распространяемое расширение потребует отдельной библиотеки,
+совместимого target и закреплённых пакетов Roslyn; описание есть в главе 22.
+
+RuntimeChecks ссылается на RuntimeLab как на сборку с публичными учебными типами:
+ссылка на exe-проект допустима, точка входа при этом не запускается.
+RuntimeLab разрешает unsafe для ограниченных примеров главы 23.
+Публикация Native AOT и trimming не входит в текущую автоматическую проверку.
+
+FileBased/hello.cs запускается SDK напрямую и проверяется отдельно от solution.
+Для него явно отключён PublishAot. Остальные проекты не включают этот исходник.

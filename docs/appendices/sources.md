@@ -48,7 +48,8 @@
 
 Версии внешних NuGet-пакетов пока не зафиксированы, потому что главы с их примерами ещё не написаны.
 При наполнении каждой главы выбирается совместимая стабильная версия, выполняется restore/build/test
-и приводится ссылка на официальную документацию пакета. Текущие два блока не используют внешние NuGet-пакеты.
+и приводится ссылка на официальную документацию пакета. Текущие примеры не используют внешние NuGet-пакеты.
+CompilerLab использует Roslyn из выбранного SDK (проверен 10.0.402); это учебный хост, связанный с его версией.
 
 ## Инструменты книги
 
@@ -58,3 +59,19 @@ PDF собирается из Markdown с помощью
 Кириллические TrueType-шрифты встраиваются в PDF. Проверка структуры использует pypdf.
 Основа структуры и сборщика адаптирована из соседнего курса SystemVerilog пользователя;
 учебный текст и примеры здесь относятся к C#.
+
+## Дополнение для глав 19–24
+
+| Тема | Первичный источник |
+| --- | --- |
+| Сборки и загрузка | [Assemblies](https://learn.microsoft.com/en-us/dotnet/standard/assembly/) |
+| Достижимость и поколения | [GC fundamentals](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals) |
+| Владение ресурсами | [Dispose](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose) |
+| Trimming | [Подготовка библиотек](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming) |
+| Генерация исходников | [Roslyn cookbook](https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.cookbook.md) |
+| Время жизни буферов | [Memory/Span guidelines](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-usage-guidelines) |
+| История совместимости | [C# versions](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history) |
+| Запуск одного исходника | [File-based apps](https://learn.microsoft.com/en-us/dotnet/core/sdk/file-based-apps) |
+
+В справочнике unsafe уже встречаются правила preview C# 15; примеры курса используют только C# 14.
+Поведение проверено компилятором и тестами, а возможность AOT-публикации отдельно не заявляется.

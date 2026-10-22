@@ -6,6 +6,8 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import book
@@ -33,6 +35,32 @@ class BookTests(unittest.TestCase):
         count, files = book.check(self.root)
         self.assertEqual(count, 2)
         self.assertEqual(files, 3)
+
+    def test_heading_and_short_listing_stay_on_same_page(self):
+        from pypdf import PdfReader
+
+        fonts = book.find_fonts(SimpleNamespace(font=None, bold_font=None, mono_font=None))
+        source = self.root / "docs/one.md"
+        parts = ["# One"]
+        for index in range(36):
+            parts.extend(["Filler paragraph for the page boundary."] * (index % 7))
+            parts.append(f"## Boundary section {index:02}")
+            listing = "\n".join([f"payload-{index:02}"] * (1 + index % 8))
+            parts.append(f"```text\n{listing}\n```")
+        source.write_text("\n\n".join(parts), encoding="utf-8")
+        meta, chapters = book.load_book(self.root)
+        meta.update(title="Layout test", subtitle="Short listings", standard="C#",
+                    edition="test", scope="Page boundary regression")
+        target = self.root / "layout.pdf"
+        with patch.object(book, "ROOT", self.root):
+            book.build_pdf(meta, chapters, target, fonts)
+        pages = [page.extract_text() or "" for page in PdfReader(target).pages]
+        for index in range(36):
+            heading_pages = [i for i, text in enumerate(pages)
+                             if f"Boundary section {index:02}" in text]
+            code_pages = [i for i, text in enumerate(pages) if f"payload-{index:02}" in text]
+            self.assertEqual(len(heading_pages), 1)
+            self.assertEqual(heading_pages, code_pages, f"Orphan heading {index}")
 
     def test_orphan_chapter_cannot_be_omitted_from_pdf(self):
         (self.root / "docs/two.md").write_text("# Two\n", encoding="utf-8")

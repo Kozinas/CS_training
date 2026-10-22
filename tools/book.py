@@ -380,7 +380,15 @@ def build_pdf(meta, chapters, target, fonts):
                 block = Preformatted(token.content.rstrip("\n"), styles["code"],
                                      maxLineLength=max_chars, newLineChars="    ")
                 # Keep short examples readable as a unit; long listings may span pages.
-                story.append(KeepTogether([block]) if len(block.lines) <= 20 else block)
+                if len(block.lines) <= 20:
+                    # A nested KeepTogether can strand its preceding heading.
+                    # Put the heading and short listing in the same group instead.
+                    group = [block]
+                    if story and hasattr(story[-1], "book_heading"):
+                        group.insert(0, story.pop())
+                    story.append(KeepTogether(group))
+                else:
+                    story.append(block)
             elif kind in ("bullet_list_open", "ordered_list_open"):
                 stack.append(None if kind == "bullet_list_open" else int(token.attrGet("start") or 1))
             elif kind in ("bullet_list_close", "ordered_list_close"):
