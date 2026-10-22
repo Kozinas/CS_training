@@ -1,0 +1,110 @@
+{
+  "title": "C# и .NET — методичка и практикум",
+  "subtitle": "От первой программы к разработке и сопровождению приложений",
+  "language": "ru",
+  "edition": "2026-10-22",
+  "standard": "C# 14 · .NET 10 LTS",
+  "scope": "Первый выпуск: главы 01–10, лабораторная L01 и программа из 60 глав. Главы 11–60 пока представлены планом.",
+  "parts": [
+    {
+      "title": "Начало работы",
+      "chapters": [
+        [
+          "00",
+          "Как проходить практикум C# и .NET",
+          "docs/00-start.md"
+        ]
+      ]
+    },
+    {
+      "title": "I. Первая самостоятельная программа",
+      "chapters": [
+        [
+          "01",
+          "C# и .NET, рабочая среда",
+          "docs/01-foundations/01-platform.md"
+        ],
+        [
+          "02",
+          "Синтаксис и диагностика",
+          "docs/01-foundations/02-syntax.md"
+        ],
+        [
+          "03",
+          "Типы, числа и операции",
+          "docs/01-foundations/03-types.md"
+        ],
+        [
+          "04",
+          "Ветвления и циклы",
+          "docs/01-foundations/04-control.md"
+        ],
+        [
+          "05",
+          "Методы и декомпозиция",
+          "docs/01-foundations/05-methods.md"
+        ],
+        [
+          "06",
+          "Строки, null и культура",
+          "docs/01-foundations/06-text-null.md"
+        ],
+        [
+          "07",
+          "Массивы и базовые коллекции",
+          "docs/01-foundations/07-collections.md"
+        ],
+        [
+          "08",
+          "Классы и инварианты",
+          "docs/01-foundations/08-classes.md"
+        ],
+        [
+          "09",
+          "Ошибки, ресурсы и первые файлы",
+          "docs/01-foundations/09-errors-files.md"
+        ],
+        [
+          "10",
+          "Практикум ExpenseLedger CLI",
+          "docs/01-foundations/10-project.md"
+        ]
+      ]
+    },
+    {
+      "title": "Лабораторные работы",
+      "chapters": [
+        [
+          "L01",
+          "Консольный журнал расходов",
+          "labs/01-expense-ledger/README.md"
+        ]
+      ]
+    },
+    {
+      "title": "Приложения",
+      "chapters": [
+        [
+          "A",
+          "Подсказки и разбор контрольных вопросов",
+          "docs/appendices/hints.md"
+        ],
+        [
+          "B",
+          "Карта покрытия языка C#",
+          "docs/appendices/language-map.md"
+        ],
+        [
+          "C",
+          "Источники и версии",
+          "docs/appendices/sources.md"
+        ],
+        [
+          "P",
+          "Программа практикума C# и .NET",
+          "PLAN.md"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Foundations/Foundations.csproj" />
+  <Project Path="ExpenseLedger/ExpenseLedger.csproj" />
+  <Project Path="ContractChecks/ContractChecks.csproj" />
+</Solution>

@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Local course tooling and learner work
+.venv/
+__pycache__/
+*.pyc
+.artifacts/
+work/
+dist/*.tmp.pdf
+dist/*.tmp.md

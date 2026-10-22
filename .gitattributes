@@ -3,6 +3,9 @@
 ###############################################################################
 * text=auto
 
+# Preserve generated books as binary files, including their exact byte offsets.
+*.pdf binary
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
