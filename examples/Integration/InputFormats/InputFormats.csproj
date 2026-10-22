@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+  </ItemGroup>
+</Project>

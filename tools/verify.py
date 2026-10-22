@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ledger-dll", type=Path, help="Check a learner's already built L01 DLL")
+    parser.add_argument("--core-only", action="store_true", help="Only chapters 01-24, without external NuGet packages")
     args = parser.parse_args()
     artifacts = ROOT / ".artifacts"
     artifacts.mkdir(exist_ok=True)
@@ -111,6 +112,12 @@ def main():
         result = run(["dotnet", "run", "--file", "FileBased/hello.cs"], cwd=base, timeout=120)
         require(result.returncode == 0 and normalize(result.stdout) == "file-based C# 14\n"
                 and not result.stderr, f"File-based app: {result}")
+        if not args.core_only:
+            integration = run([sys.executable, "-B", str(ROOT / "tools/verify_integration.py")],
+                              timeout=240)
+            require(integration.returncode == 0 and not integration.stderr,
+                    integration.stdout + integration.stderr)
+            print(integration.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

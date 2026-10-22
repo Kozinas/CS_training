@@ -1,6 +1,8 @@
 # Запускаемые примеры C#
 
-Примеры относятся к написанным главам 01–24. Solution курса — [CSharpCourse.slnx](CSharpCourse.slnx).
+Примеры относятся к главам 01–30. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
+Главы 25–30 используют [Integration.slnx](Integration/Integration.slnx); команды и пакеты описаны в
+[Integration/README](Integration/README.md).
 Она независима от пользовательского ConsoleApp1 в корне.
 
 ## Запуск
@@ -46,8 +48,9 @@ ExpenseLedger — полный образец L01. Стартовые услов
 При работе из корня выбор SDK обычно определяется корнем; проверочный скрипт запускает сборку из examples,
 чтобы использовать этот global.json.
 
-В [NuGet.Config](NuGet.Config) источники отключены: в текущих примерах внешних пакетов нет, restore работает офлайн.
-При добавлении будущих примеров с пакетами конфигурацию потребуется явно расширить и зафиксировать версии.
+В [NuGet.Config](NuGet.Config) источники отключены для языковой solution: её restore работает офлайн.
+Поддерево Integration имеет собственную конфигурацию nuget.org и packages.lock.json.
+Полная проверка: `python tools/verify.py`; только язык: `python tools/verify.py --core-only`.
 Этот файл действует на проекты examples и не меняет настройки ConsoleApp1.
 
 Пример 09 создаёт собственный временный файл с уникальным именем, читает его и удаляет в finally.

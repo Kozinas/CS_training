@@ -1,0 +1,11 @@
+{
+  "added": 2,
+  "duplicates": 1,
+  "failed": 3,
+  "total": 2,
+  "errors": [
+    {"record": 4, "code": "invalid_date"},
+    {"record": 5, "code": "invalid_amount"},
+    {"record": 6, "code": "id_conflict"}
+  ]
+}

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="InputFormats/InputFormats.csproj" />
+  <Project Path="BclLab/BclLab.csproj" />
+  <Project Path="ImportCli/ImportCli.csproj" />
+  <Project Path="IntegrationChecks/IntegrationChecks.csproj" />
+  <Project Path="../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+</Solution>

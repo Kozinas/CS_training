@@ -44,11 +44,11 @@
 Изучайте объяснение задачи, затем проверяйте современный способ по документации.
 Например, рекомендации о hosting model, nullable, пакетах и версиях SDK нельзя переносить механически.
 
-## Внешние библиотеки следующих блоков
+## Внешние библиотеки
 
-Версии внешних NuGet-пакетов пока не зафиксированы, потому что главы с их примерами ещё не написаны.
-При наполнении каждой главы выбирается совместимая стабильная версия, выполняется restore/build/test
-и приводится ссылка на официальную документацию пакета. Текущие примеры не используют внешние NuGet-пакеты.
+Для блока 25–30 проверены стабильные версии из nuget.org, приведённые ниже.
+Транзитивный граф закреплён в packages.lock.json; воспроизведение использует locked restore.
+Примеры 01–24 по-прежнему не используют внешние NuGet-пакеты.
 CompilerLab использует Roslyn из выбранного SDK (проверен 10.0.402); это учебный хост, связанный с его версией.
 
 ## Инструменты книги
@@ -75,3 +75,22 @@ PDF собирается из Markdown с помощью
 
 В справочнике unsafe уже встречаются правила preview C# 15; примеры курса используют только C# 14.
 Поведение проверено компилятором и тестами, а возможность AOT-публикации отдельно не заявляется.
+
+## Источники и пакеты глав 25–30
+
+| Пакет / область | Проверенная версия | Официальный источник |
+| --- | --- | --- |
+| CsvHelper | 33.1.0 | [Документация](https://joshclose.github.io/CsvHelper/getting-started/) |
+| Microsoft.Extensions.Hosting | 10.0.13 | [Generic Host](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host) |
+| Microsoft.Extensions.Http.Resilience | 10.11.0 | [HTTP resilience](https://learn.microsoft.com/en-us/dotnet/core/resilience/http-resilience) |
+| System.CommandLine | 2.0.13 | [Обзор API](https://learn.microsoft.com/en-us/dotnet/standard/commandline/) |
+| Serilog.Extensions.Hosting | 10.0.0 | [Репозиторий](https://github.com/serilog/serilog-extensions-hosting) |
+| Serilog.Sinks.Console | 6.1.1 | [Репозиторий sink](https://github.com/serilog/serilog-sinks-console) |
+| Spectre.Console | 0.57.2 | [Table](https://spectreconsole.net/widgets/table/) |
+| System.Text.Json | В составе .NET 10 | [Source generation](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation) |
+| Unicode | В составе .NET 10 | [Character encoding](https://learn.microsoft.com/en-us/dotnet/standard/base-types/character-encoding-introduction) |
+| Generic math | В составе .NET 10 | [Числовые интерфейсы](https://learn.microsoft.com/en-us/dotnet/standard/generics/math) |
+
+Доступность конкретных версий сверена с официальным NuGet flat-container index, затем выполнены restore,
+сборка и контрактные проверки. Номера пакетов Host и Resilience имеют разные циклы выпуска.
+Полный список прямых зависимостей и команды — в [примерах интеграций](../../examples/Integration/README.md).
