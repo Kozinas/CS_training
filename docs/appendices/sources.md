@@ -18,6 +18,10 @@
 | Сравнение строк | [String best practices](https://learn.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings) |
 | Веб-разработка | [ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/) |
 | ORM | [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/) |
+| Объектная модель | [Интерфейсы](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface), [records](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record) |
+| Generic-контракты | [Ограничения типов](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters) |
+| Отложенное выполнение | [Yield](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/yield), [LINQ](https://learn.microsoft.com/en-us/dotnet/standard/linq/deferred-execution-lazy-evaluation) |
+| Современный синтаксис | [Patterns](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns), [extension members](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) |
 
 Справочник языка обновляется и может упоминать preview-возможности; в курс их включают только с явной пометкой.
 Существование API в документации не подтверждает его доступность в выбранном TFM.
@@ -44,7 +48,7 @@
 
 Версии внешних NuGet-пакетов пока не зафиксированы, потому что главы с их примерами ещё не написаны.
 При наполнении каждой главы выбирается совместимая стабильная версия, выполняется restore/build/test
-и приводится ссылка на официальную документацию пакета. Текущий первый блок не использует внешние NuGet-пакеты.
+и приводится ссылка на официальную документацию пакета. Текущие два блока не используют внешние NuGet-пакеты.
 
 ## Инструменты книги
 

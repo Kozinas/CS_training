@@ -72,6 +72,25 @@ def main():
         require(contracts.returncode == 0 and not contracts.stderr, contracts.stdout + contracts.stderr)
         print(contracts.stdout.strip())
 
+        advanced = base / "TypesAndQueries/bin/Release/net10.0/TypesAndQueries.dll"
+        advanced_expected = {
+            "11": "Detailed\ntext\n",
+            "12": "True\nTrue\n3.50\n",
+            "13": "3\n5\n0\nduplicate_id\n",
+            "14": "0\n1\n2\n",
+            "15": "3\n2\ndisposed\n",
+            "16": "2,3\n2,3\n",
+            "17": "large\nTrue\n1500.00\n",
+            "18": "duplicate_id\nfood=20.00 (2)\ntravel=30.00 (1)\nnotifications=4\n",
+        }
+        for chapter, output in advanced_expected.items():
+            result = run(["dotnet", str(advanced), chapter])
+            require(result.returncode == 0 and normalize(result.stdout) == output and not result.stderr,
+                    f"TypesAndQueries {chapter}: {result}")
+        core = run(["dotnet", str(base / "CoreChecks/bin/Release/net10.0/CoreChecks.dll")])
+        require(core.returncode == 0 and not core.stderr, core.stdout + core.stderr)
+        print(core.stdout.strip())
+
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)
 

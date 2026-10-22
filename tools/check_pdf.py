@@ -16,7 +16,7 @@ def main():
         if " ".join(chapter.title.split()) not in normalized:
             errors.append("Missing chapter: " + chapter.title)
     for marker in ("C#", "Оглавление", "Практика", "TryParse", "count=3",
-                   "Два обязательных способа изучения", "Главы 11–60"):
+                   "Два обязательных способа изучения", meta["scope"]):
         if marker not in normalized:
             errors.append("Missing text marker: " + marker)
     if "\ufffd" in normalized or "\x00" in normalized:

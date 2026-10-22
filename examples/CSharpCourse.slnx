@@ -2,4 +2,8 @@
   <Project Path="Foundations/Foundations.csproj" />
   <Project Path="ExpenseLedger/ExpenseLedger.csproj" />
   <Project Path="ContractChecks/ContractChecks.csproj" />
+  <Project Path="ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+  <Project Path="ExpenseLedger.Memory/ExpenseLedger.Memory.csproj" />
+  <Project Path="TypesAndQueries/TypesAndQueries.csproj" />
+  <Project Path="CoreChecks/CoreChecks.csproj" />
 </Solution>

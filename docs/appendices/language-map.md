@@ -1,7 +1,7 @@
 # Карта покрытия языка C#
 
 Карта помогает проверять полноту программы. Номер означает запланированное место темы,
-а статус показывает наличие учебного текста. **Написано только 01–10**; строка «план» не означает,
+а статус показывает наличие учебного текста. **Написаны главы 01–18**; строка «план» не означает,
 что тему уже можно изучить здесь. Сверка состава выполнена с
 [официальным справочником](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/)
 и [описанием C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14).
@@ -11,7 +11,7 @@
 | Лексика, литералы, комментарии, имена, scope | 02–03 | Базовый материал написан |
 | Числовые типы, bool/char/string, conversions, checked | 03, 06 | Базовый материал написан |
 | Операции, precedence, short-circuit, биты и сдвиги | 03 | Введение написано |
-| if/switch, циклы, break/continue/return, goto | 04, 17 | 04 написана, углубление в плане |
+| if/switch, циклы, break/continue/return, goto | 04, 17 | Написано |
 | Методы, static, overload, local functions, recursion, params | 05, 13, 24 | Основы написаны |
 | ref/out/in, ref return, ref readonly, scoped | 05, 23 | Основы написаны, углубление в плане |
 | Null, `Nullable<T>`, аннотации и анализ | 06, 13, 21, 24 | Основы написаны |
@@ -19,14 +19,14 @@
 | class, constructors, fields, properties, accessibility | 08, 11–12, 24 | Основы написаны |
 | init, required, readonly, object initializer | 08, 12 | Введение написано |
 | Исключения, filters, using и IDisposable | 09, 20, 31 | Основы написаны |
-| Наследование, override/new, abstract, sealed, interfaces | 11 | План |
-| struct/readonly struct, records, primary constructors, with | 12, 24 | План |
-| object, boxing/unboxing, enum/Flags, tuples, equality | 12, 20 | План |
-| Generics, constraints, variance, generic math | 13 | План |
-| delegate, lambda, closures, events | 14 | План |
-| foreach pattern, IEnumerable, yield, iterator disposal | 15 | План |
-| LINQ method/query syntax, IQueryable | 16 | План |
-| Patterns, extension members, operators, indexers | 17, 24 | План |
+| Наследование, override/new, abstract, sealed, interfaces | 11 | Написано |
+| struct/readonly struct, records, primary constructors, with | 12, 24 | 12 написана; версии дополнительно в 24 |
+| object, boxing/unboxing, enum/Flags, tuples, equality | 12, 20 | Семантика написана; устройство CLR в плане |
+| Generics, constraints, variance, generic math | 13 | Написано; ref-ограничения углубляются в 23 |
+| delegate, lambda, closures, events | 14 | Написано |
+| foreach pattern, IEnumerable, yield, iterator disposal | 15 | Написано; async-перечисление в плане |
+| LINQ method/query syntax, IQueryable | 16 | Написано; работа с БД далее в 42 |
+| Patterns, extension members, operators, indexers | 17, 24 | 17 написана; новые версии углубляются в 24 |
 | Assemblies, IL, metadata, CLR, JIT/AOT | 01, 19 | Обзор написан, углубление в плане |
 | GC, finalization, managed/native lifetime | 20 | План |
 | Attributes, reflection, dynamic, anonymous types, expressions | 21 | План |
