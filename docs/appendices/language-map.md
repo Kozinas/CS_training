@@ -1,7 +1,7 @@
 # Карта покрытия языка C#
 
 Карта помогает проверять полноту программы. Номер означает запланированное место темы,
-а статус показывает наличие учебного текста. **Написаны главы 01–39**; строка «план» не означает,
+а статус показывает наличие учебного текста. **Написаны главы 01–43**; строка «план» не означает,
 что тему уже можно изучить здесь. Сверка состава выполнена с
 [официальным справочником](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/)
 и [описанием C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14).
@@ -25,7 +25,7 @@
 | Generics, constraints, variance, generic math | 13 | Написано; ref-ограничения углубляются в 23 |
 | delegate, lambda, closures, events | 14 | Написано |
 | foreach pattern, IEnumerable, yield, iterator disposal | 15, 31 | Написано; есть проверки async-перечисления |
-| LINQ method/query syntax, IQueryable | 16 | Написано; работа с БД далее в 42 |
+| LINQ method/query syntax, IQueryable | 16 | Написано; перевод в SQL проверен в 42 |
 | Patterns, extension members, operators, indexers | 17, 24 | Написано |
 | Assemblies, IL, metadata, CLR, JIT/AOT | 01, 19 | Написано; AOT-публикация далее |
 | GC, finalization, managed/native lifetime | 20 | Написано; async-disposal и проверки в 31 |
@@ -44,8 +44,8 @@
 Работа с JSON, датами, HTTP, DI и журналами написана в 25–30 и проверяется в L03.
 Ограниченная конкурентность, Channels, BackgroundService и измерения написаны в 31–35 и проверяются в L04.
 Тестирование, проектирование, Git, CI и NuGet написаны и проверены в 36–39.
-Далее запланированы SQL и persistence в 40–43;
-веб и сервисы — в 44–49; UI, игры и вычисления — в 50–54.
+SQL, ADO.NET/Dapper, EF Core, миграции и транзакции написаны в 40–43 и проверены в L05.
+Далее запланированы веб и сервисы в 44–49; UI, игры и вычисления — в 50–54.
 Поставка и эксплуатация — в 55–60.
 
 Таким образом, «знать язык» и «работать в C#-проекте» проверяются отдельно.

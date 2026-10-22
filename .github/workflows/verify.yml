@@ -47,5 +47,7 @@ jobs:
             dist/csharp.md
             .artifacts/engineering/summary.json
             .artifacts/engineering/boundary-repro.txt
+            .artifacts/data/summary.json
+            .artifacts/data/query-plan.txt
           include-hidden-files: true
           retention-days: 7

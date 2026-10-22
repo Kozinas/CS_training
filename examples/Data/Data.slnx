@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Persistence/Persistence.csproj" />
+  <Project Path="DataCli/DataCli.csproj" />
+  <Project Path="Persistence.Tests/Persistence.Tests.csproj" />
+  <Project Path="../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+  <Project Path="../Integration/InputFormats/InputFormats.csproj" />
+</Solution>

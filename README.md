@@ -7,10 +7,10 @@
 [Полная программа из 60 глав](PLAN.md) · [Ход наполнения](PROGRESS.md) ·
 [Результаты проверок](VALIDATION.md)
 
-**Готовы главы 01–39, 117 заданий A/B/C и лабораторные L01–L04.**
-Главы 40–60 подробно спланированы, но ещё не наполнены учебным текстом.
-Шесть блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру
-и сопровождению кода с тестами, Git, CI и NuGet. Дальнейший маршрут включает SQL, ASP.NET Core, UI, игры и поставку приложения.
+**Готовы главы 01–43, 129 заданий A/B/C и лабораторные L01–L05.**
+Главы 44–60 подробно спланированы, но ещё не наполнены учебным текстом.
+Семь блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру,
+сопровождению кода и транзакционной базе данных. Дальнейший маршрут включает ASP.NET Core, UI, игры и поставку приложения.
 
 ## Начать обучение
 
@@ -22,6 +22,7 @@
 6. Изучите [библиотеки и внешние данные](docs/04-libraries/25-collections.md) и сдайте [L03](labs/03-import-tool/README.md).
 7. Пройдите [async, потоки и производительность](docs/05-concurrency/31-async.md) и сдайте [L04](labs/04-background-pipeline/README.md).
 8. Изучите [тестирование и инженерную работу](docs/06-engineering/36-testing.md), выполните кейс сопровождения из главы 39.
+9. Пройдите [SQL, Dapper и EF Core](docs/07-data/40-sql.md), выполните [L05](labs/05-durable-storage/README.md) на настоящей SQLite-базе.
 
 ```powershell
 dotnet run --project examples/Foundations -- 01
@@ -30,9 +31,9 @@ python tools/verify.py
 ```
 
 Для примеров нужен .NET 10 SDK, для скриптов — Python 3.10+.
-Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–39 нужен первый restore из nuget.org;
+Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–43 нужен первый restore из nuget.org;
 версии и полный граф зависимостей закреплены. Engineering использует SDK 10.0.402 и MTP.
-[Описание примеров](examples/README.md). Контейнерный тест главы 36 требует отдельного Linux Docker engine.
+[Описание примеров](examples/README.md). Контейнерный тест главы 36 требует отдельного Linux Docker engine. L05 работает на SQLite без Docker.
 Проверить только 01–24 без внешних пакетов: `python tools/verify.py --core-only`.
 
 ## Оглавление написанного материала
@@ -103,12 +104,20 @@ python tools/verify.py
 - [38. Git, сборка и NuGet](docs/06-engineering/38-build-git.md)
 - [39. Практикум сопровождения](docs/06-engineering/39-maintenance.md)
 
+### VII. Данные и базы данных
+
+- [40. SQL и реляционная модель](docs/07-data/40-sql.md)
+- [41. ADO.NET и Dapper](docs/07-data/41-ado-dapper.md)
+- [42. Entity Framework Core](docs/07-data/42-ef-core.md)
+- [43. Практикум надёжного хранения](docs/07-data/43-durable-storage.md)
+
 ### Лабораторные работы
 
 - [L01. Консольный журнал расходов](labs/01-expense-ledger/README.md)
 - [L02. Библиотека правил и отчётов](labs/02-domain-library/README.md)
 - [L03. Воспроизводимая утилита импорта](labs/03-import-tool/README.md)
 - [L04. Ограниченный фоновый конвейер](labs/04-background-pipeline/README.md)
+- [L05. Надёжное хранение расходов](labs/05-durable-storage/README.md)
 
 ### Приложения
 
@@ -160,7 +169,7 @@ python tools/book.py build --font /path/regular.ttf --bold-font /path/bold.ttf -
 | `PLAN.md` | Полный список тем, подтем, этапов и критериев |
 | `docs` | Главы и приложения |
 | `labs` | Условия лабораторных и входные данные |
-| `examples` | Solution языка и отдельная Integration.slnx с библиотеками и импортёром |
+| `examples` | Отдельные solution языка, интеграций, инженерных примеров и баз данных |
 | `tools` | Сборка книги и проверки |
 | `dist` | Готовые PDF и единый Markdown |
 | `Books` | Дополнительные книги пользователя |

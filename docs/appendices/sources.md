@@ -133,3 +133,20 @@ BenchmarkDotNet, trace и counters действительно запускали
 NUnit/MSTest, [FsCheck](https://fscheck.github.io/FsCheck/) и
 [Stryker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/) даны как альтернативы/углубление,
 без заявления об их отдельном запуске. Контролируемая мутация дедлайна выполнена собственным скриптом.
+
+## Источники и пакеты глав 40–43
+
+| Область / пакет | Версия в примере | Первичный источник |
+| --- | --- | --- |
+| SQLite: SELECT, план и изоляция | Движок из провайдера | [SELECT](https://www.sqlite.org/lang_select.html), [EXPLAIN](https://www.sqlite.org/eqp.html), [isolation](https://www.sqlite.org/isolation.html) |
+| Microsoft.Data.Sqlite | 10.0.13 | [Параметры](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/parameters), [async](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/async), [backup](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/backup) |
+| Dapper | 2.1.89 | [Официальный репозиторий](https://github.com/DapperLib/Dapper) |
+| EF Core Sqlite / Design | 10.0.13 | [DbContext](https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/), [запросы](https://learn.microsoft.com/en-us/ef/core/performance/efficient-querying) |
+| dotnet-ef | 10.0.13 | [Миграции](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying) |
+| EF Core: конкурентность и bulk | 10.0.13 | [Tokens](https://learn.microsoft.com/en-us/ef/core/saving/concurrency), [ExecuteUpdate](https://learn.microsoft.com/en-us/ef/core/saving/execute-insert-update-delete), [pagination](https://learn.microsoft.com/en-us/ef/core/querying/pagination) |
+| Серверные отличия | Сравнение, без запуска | [Изоляция PostgreSQL](https://www.postgresql.org/docs/current/transaction-iso.html), [SQL Server rowversion](https://learn.microsoft.com/en-us/sql/t-sql/data-types/rowversion-transact-sql) |
+
+Версии NuGet проверены на 22 октября 2026. В [Data](../../examples/Data/README.md) хранятся CPM,
+три новых lock-файла и manifest локального dotnet-ef. SQLite-тесты работают с реальными файлами;
+они не подтверждают переносимость SQL и поведения на PostgreSQL/SQL Server.
+Процент покрытия здесь не измерялся; проверены конкретные сценарии из L05.

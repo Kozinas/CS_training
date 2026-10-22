@@ -126,6 +126,9 @@ def main():
             require(engineering.returncode == 0 and not engineering.stderr,
                     engineering.stdout + engineering.stderr)
             print(engineering.stdout.strip())
+            data = run([sys.executable, "-B", str(ROOT / "tools/verify_data.py")], timeout=360)
+            require(data.returncode == 0 and not data.stderr, data.stdout + data.stderr)
+            print(data.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+    <PackageReference Include="Dapper" />
+    <ProjectReference Include="../../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+    <InternalsVisibleTo Include="Persistence.Tests" />
+  </ItemGroup>
+</Project>
