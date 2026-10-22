@@ -129,6 +129,9 @@ def main():
             data = run([sys.executable, "-B", str(ROOT / "tools/verify_data.py")], timeout=360)
             require(data.returncode == 0 and not data.stderr, data.stdout + data.stderr)
             print(data.stdout.strip())
+            web = run([sys.executable, "-B", str(ROOT / "tools/verify_web.py")], timeout=360)
+            require(web.returncode == 0 and not web.stderr, web.stdout + web.stderr)
+            print(web.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

@@ -150,3 +150,24 @@ NUnit/MSTest, [FsCheck](https://fscheck.github.io/FsCheck/) и
 три новых lock-файла и manifest локального dotnet-ef. SQLite-тесты работают с реальными файлами;
 они не подтверждают переносимость SQL и поведения на PostgreSQL/SQL Server.
 Процент покрытия здесь не измерялся; проверены конкретные сценарии из L05.
+
+## Источники и пакеты глав 44–49
+
+| Область / пакет | Версия примера | Первичный источник |
+| --- | --- | --- |
+| ASP.NET Core, MVC/Razor | 10.0.13 | [MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-10.0), [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-10.0) |
+| OpenApi и validation | OpenApi 10.0.13; validation — обзор | [OpenAPI](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/aspnetcore-openapi?view=aspnetcore-10.0), [validation](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/validation?view=aspnetcore-10.0) |
+| Identity.EntityFrameworkCore | 10.0.13 | [Identity API и opaque tokens](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-10.0) |
+| Cookie, antiforgery, limiter | ASP.NET Core 10.0.13 | [Cookie](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-10.0), [CSRF](https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery?view=aspnetcore-10.0), [rate limits](https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit?view=aspnetcore-10.0) |
+| Mvc.Testing, SignalR.Client | 10.0.13 | [Integration tests](https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-10.0), [SignalR auth](https://learn.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-10.0) |
+| Caching.Hybrid | 10.11.0 | [HybridCache](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-10.0) |
+| Grpc.AspNetCore / Net.Client | 2.84.0 | [gRPC tests](https://learn.microsoft.com/en-us/aspnet/core/grpc/test-services?view=aspnetcore-10.0), [Protobuf](https://protobuf.dev/programming-guides/proto3/) |
+| OpenTelemetry hosting, instrumentation, console | 1.20.1 | [.NET OTel](https://opentelemetry.io/docs/languages/dotnet/), [наблюдаемость .NET](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/observability-with-otel) |
+| Протоколы | RFC 9457 / 9700 | [Problem Details](https://www.rfc-editor.org/info/rfc9457/), [OAuth Security BCP](https://www.rfc-editor.org/info/rfc9700/) |
+| Брокер и delivery | Обзор и задание | [RabbitMQ acknowledgements](https://www.rabbitmq.com/docs/confirms), [MassTransit outbox](https://masstransit.massient.com/concepts/outbox) |
+| Планировщики | Обзор и задание | [Quartz](https://www.quartz-scheduler.net/documentation/quartz-4.x/quick-start.html), [Hangfire](https://docs.hangfire.io/en/latest/background-methods/index.html) |
+
+Пакеты проверены через NuGet на 22 октября 2026; CPM, два lock-файла и manifest dotnet-ef находятся
+в [Web](../../examples/Web/README.md). EF Core/Sqlite/Design и dotnet-ef — 10.0.13;
+xUnit/MTP — 4.0.2 и TrxReport — 2.5.1. Веб-пример использует настоящие Identity и SQLite.
+Redis, RabbitMQ/MassTransit, Quartz/Hangfire и внешний OIDC описаны как продолжения, без заявления об их запуске.

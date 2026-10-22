@@ -1,0 +1,7 @@
+syntax = "proto3";
+option csharp_namespace = "Course.Web.Rpc";
+package ledger.v1;
+service Reports { rpc Get (ReportRequest) returns (ReportReply); }
+message ReportRequest { }
+message ReportReply { repeated ReportLine lines = 1; }
+message ReportLine { string category = 1; int32 count = 2; int64 amount_minor = 3; }

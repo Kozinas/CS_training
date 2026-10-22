@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="LedgerWeb/LedgerWeb.csproj" />
+  <Project Path="Web.Tests/Web.Tests.csproj" />
+  <Project Path="../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+</Solution>

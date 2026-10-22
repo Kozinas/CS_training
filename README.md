@@ -7,10 +7,10 @@
 [Полная программа из 60 глав](PLAN.md) · [Ход наполнения](PROGRESS.md) ·
 [Результаты проверок](VALIDATION.md)
 
-**Готовы главы 01–43, 129 заданий A/B/C и лабораторные L01–L05.**
-Главы 44–60 подробно спланированы, но ещё не наполнены учебным текстом.
-Семь блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру,
-сопровождению кода и транзакционной базе данных. Дальнейший маршрут включает ASP.NET Core, UI, игры и поставку приложения.
+**Готовы главы 01–49, 147 заданий A/B/C и лабораторные L01–L06.**
+Главы 50–60 подробно спланированы, но ещё не наполнены учебным текстом.
+Восемь блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру,
+сопровождению кода, транзакционной базе данных и веб-сервису с пользователями. Дальнейший маршрут включает UI, игры и поставку приложения.
 
 ## Начать обучение
 
@@ -23,6 +23,7 @@
 7. Пройдите [async, потоки и производительность](docs/05-concurrency/31-async.md) и сдайте [L04](labs/04-background-pipeline/README.md).
 8. Изучите [тестирование и инженерную работу](docs/06-engineering/36-testing.md), выполните кейс сопровождения из главы 39.
 9. Пройдите [SQL, Dapper и EF Core](docs/07-data/40-sql.md), выполните [L05](labs/05-durable-storage/README.md) на настоящей SQLite-базе.
+10. Изучите [ASP.NET Core и сервисы](docs/08-web/44-http-api.md), выполните [L06](labs/06-expense-api/README.md) с API, пользователями и фоновой доставкой.
 
 ```powershell
 dotnet run --project examples/Foundations -- 01
@@ -31,9 +32,9 @@ python tools/verify.py
 ```
 
 Для примеров нужен .NET 10 SDK, для скриптов — Python 3.10+.
-Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–43 нужен первый restore из nuget.org;
+Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–49 нужен первый restore из nuget.org;
 версии и полный граф зависимостей закреплены. Engineering использует SDK 10.0.402 и MTP.
-[Описание примеров](examples/README.md). Контейнерный тест главы 36 требует отдельного Linux Docker engine. L05 работает на SQLite без Docker.
+[Описание примеров](examples/README.md). Контейнерный тест главы 36 требует отдельного Linux Docker engine. L05 и L06 работают на SQLite без Docker; Web включает процессную проверку Kestrel.
 Проверить только 01–24 без внешних пакетов: `python tools/verify.py --core-only`.
 
 ## Оглавление написанного материала
@@ -111,6 +112,15 @@ python tools/verify.py
 - [42. Entity Framework Core](docs/07-data/42-ef-core.md)
 - [43. Практикум надёжного хранения](docs/07-data/43-durable-storage.md)
 
+### VIII. ASP.NET Core и сервисы
+
+- [44. HTTP API на ASP.NET Core](docs/08-web/44-http-api.md)
+- [45. MVC, Razor Pages и браузер](docs/08-web/45-browser.md)
+- [46. Идентификация и защита API](docs/08-web/46-security.md)
+- [47. Кэш, фоновые задачи и наблюдаемость](docs/08-web/47-operations.md)
+- [48. Связь между сервисами](docs/08-web/48-messaging.md)
+- [49. Практикум ExpenseLedger API](docs/08-web/49-api-lab.md)
+
 ### Лабораторные работы
 
 - [L01. Консольный журнал расходов](labs/01-expense-ledger/README.md)
@@ -118,6 +128,7 @@ python tools/verify.py
 - [L03. Воспроизводимая утилита импорта](labs/03-import-tool/README.md)
 - [L04. Ограниченный фоновый конвейер](labs/04-background-pipeline/README.md)
 - [L05. Надёжное хранение расходов](labs/05-durable-storage/README.md)
+- [L06. ExpenseLedger API](labs/06-expense-api/README.md)
 
 ### Приложения
 
@@ -169,7 +180,7 @@ python tools/book.py build --font /path/regular.ttf --bold-font /path/bold.ttf -
 | `PLAN.md` | Полный список тем, подтем, этапов и критериев |
 | `docs` | Главы и приложения |
 | `labs` | Условия лабораторных и входные данные |
-| `examples` | Отдельные solution языка, интеграций, инженерных примеров и баз данных |
+| `examples` | Отдельные solution языка, интеграций, инженерных примеров, баз данных и веб-сервиса |
 | `tools` | Сборка книги и проверки |
 | `dist` | Готовые PDF и единый Markdown |
 | `Books` | Дополнительные книги пользователя |

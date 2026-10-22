@@ -4,7 +4,7 @@
   "language": "ru",
   "edition": "2026-10-22",
   "standard": "C# 14 · .NET 10 LTS",
-  "scope": "Седьмой выпуск: главы 01–43, лабораторные L01–L05 и программа из 60 глав. Главы 44–60 пока представлены планом.",
+  "scope": "Восьмой выпуск: главы 01–49, лабораторные L01–L06 и программа из 60 глав. Главы 50–60 пока представлены планом.",
   "parts": [
     {
       "title": "Начало работы",
@@ -267,6 +267,41 @@
       ]
     },
     {
+      "title": "VIII. ASP.NET Core и сервисы",
+      "chapters": [
+        [
+          "44",
+          "HTTP API на ASP.NET Core",
+          "docs/08-web/44-http-api.md"
+        ],
+        [
+          "45",
+          "MVC, Razor Pages и браузер",
+          "docs/08-web/45-browser.md"
+        ],
+        [
+          "46",
+          "Идентификация и защита API",
+          "docs/08-web/46-security.md"
+        ],
+        [
+          "47",
+          "Кэш, фоновые задачи и наблюдаемость",
+          "docs/08-web/47-operations.md"
+        ],
+        [
+          "48",
+          "Связь между сервисами",
+          "docs/08-web/48-messaging.md"
+        ],
+        [
+          "49",
+          "Практикум ExpenseLedger API",
+          "docs/08-web/49-api-lab.md"
+        ]
+      ]
+    },
+    {
       "title": "Лабораторные работы",
       "chapters": [
         [
@@ -293,6 +328,11 @@
           "L05",
           "Надёжное хранение расходов",
           "labs/05-durable-storage/README.md"
+        ],
+        [
+          "L06",
+          "ExpenseLedger API",
+          "labs/06-expense-api/README.md"
         ]
       ]
     },

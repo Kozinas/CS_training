@@ -1,0 +1,12 @@
+:root { font-family: system-ui, sans-serif; color: #172a3a; background: #f4f7f9; }
+main { max-width: 70rem; margin: 2rem auto; padding: 2rem; background: white; }
+header { border-bottom: 2px solid #246070; padding-bottom: 1rem; }
+a { color: #175769; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+caption { text-align: left; padding: .7rem 0; }
+th, td { text-align: left; border-bottom: 1px solid #cbd6de; padding: .6rem; overflow-wrap: anywhere; }
+form { max-width: 34rem; margin: 1rem 0; }
+label, input { display: block; }
+input { width: 100%; box-sizing: border-box; padding: .65rem; margin: .3rem 0 1rem; }
+button { padding: .7rem 1.2rem; background: #175769; color: white; border: none; cursor: pointer; }
+.validation-summary-errors { color: #9c241c; }

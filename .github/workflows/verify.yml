@@ -49,5 +49,8 @@ jobs:
             .artifacts/engineering/boundary-repro.txt
             .artifacts/data/summary.json
             .artifacts/data/query-plan.txt
+            .artifacts/web/summary.json
+            .artifacts/web/load.json
+            .artifacts/web/trace-sample.txt
           include-hidden-files: true
           retention-days: 7

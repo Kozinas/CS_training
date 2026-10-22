@@ -1,0 +1,15 @@
+@page
+@model IndexModel
+@{ ViewData["Title"] = "Мои расходы"; }
+<h1>Мои расходы</h1>
+<p>Показаны первые 100 записей. Полный список доступен постранично через API.</p>
+<partial name="_ExpenseTable" model="Model.Rows" />
+<h2>Изменить сумму</h2>
+<form method="post">
+    <div asp-validation-summary="All" role="alert"></div>
+    <label asp-for="Id">Идентификатор расхода</label><input asp-for="Id" />
+    <label asp-for="ExpectedVersion">Версия из таблицы</label><input asp-for="ExpectedVersion" />
+    <label asp-for="Amount">Новая сумма</label><input asp-for="Amount" step="0.01" />
+    <button type="submit">Сохранить</button>
+</form>
+<form method="post" asp-page-handler="Logout"><button type="submit">Выйти</button></form>

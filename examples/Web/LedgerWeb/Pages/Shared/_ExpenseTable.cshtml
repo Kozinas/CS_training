@@ -1,0 +1,13 @@
+@model Course.Web.ExpenseView[]
+<table>
+    <caption>Расходы текущего пользователя</caption>
+    <thead><tr><th>Id</th><th>Дата</th><th>Категория</th><th>Сумма</th><th>Версия</th><th>Заметка</th></tr></thead>
+    <tbody>
+    @foreach (var row in Model)
+    {
+        <tr><td>@row.Id</td><td>@row.Date.ToString("yyyy-MM-dd")</td><td>@row.Category</td>
+            <td>@((row.AmountMinor / 100m).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture))</td>
+            <td>@row.Version</td><td>@row.Note</td></tr>
+    }
+    </tbody>
+</table>

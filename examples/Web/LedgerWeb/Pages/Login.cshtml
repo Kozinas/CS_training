@@ -1,0 +1,13 @@
+@page
+@model LoginModel
+@{ ViewData["Title"] = "Вход"; }
+<h1>Вход в журнал расходов</h1>
+<p>Используйте учётную запись, созданную через API регистрации.</p>
+<form method="post">
+    <div asp-validation-summary="All" role="alert"></div>
+    <label asp-for="Email">Электронная почта</label>
+    <input asp-for="Email" autocomplete="username" />
+    <label asp-for="Password">Пароль</label>
+    <input asp-for="Password" type="password" autocomplete="current-password" />
+    <button type="submit">Войти</button>
+</form>

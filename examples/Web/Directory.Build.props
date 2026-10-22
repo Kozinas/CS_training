@@ -1,0 +1,4 @@
+<Project>
+  <Import Project="../Directory.Build.props" />
+  <PropertyGroup><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile></PropertyGroup>
+</Project>
