@@ -1,0 +1,10 @@
+{
+  "processed": 6, "added": 2, "duplicates": 1, "failed": 3,
+  "total": 2, "retried": 0,
+  "errors": [
+    {"line": 4, "code": "invalid_date"},
+    {"line": 5, "code": "invalid_amount"},
+    {"line": 6, "code": "id_conflict"}
+  ],
+  "errorsTruncated": false
+}

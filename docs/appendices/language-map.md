@@ -1,7 +1,7 @@
 # Карта покрытия языка C#
 
 Карта помогает проверять полноту программы. Номер означает запланированное место темы,
-а статус показывает наличие учебного текста. **Написаны главы 01–30**; строка «план» не означает,
+а статус показывает наличие учебного текста. **Написаны главы 01–35**; строка «план» не означает,
 что тему уже можно изучить здесь. Сверка состава выполнена с
 [официальным справочником](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/)
 и [описанием C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14).
@@ -24,24 +24,25 @@
 | object, boxing/unboxing, enum/Flags, tuples, equality | 12, 20 | Написано |
 | Generics, constraints, variance, generic math | 13 | Написано; ref-ограничения углубляются в 23 |
 | delegate, lambda, closures, events | 14 | Написано |
-| foreach pattern, IEnumerable, yield, iterator disposal | 15 | Написано; async-перечисление в плане |
+| foreach pattern, IEnumerable, yield, iterator disposal | 15, 31 | Написано; есть проверки async-перечисления |
 | LINQ method/query syntax, IQueryable | 16 | Написано; работа с БД далее в 42 |
 | Patterns, extension members, operators, indexers | 17, 24 | Написано |
 | Assemblies, IL, metadata, CLR, JIT/AOT | 01, 19 | Написано; AOT-публикация далее |
-| GC, finalization, managed/native lifetime | 20 | Написано; async-disposal в 31 |
+| GC, finalization, managed/native lifetime | 20 | Написано; async-disposal и проверки в 31 |
 | Attributes, reflection, dynamic, anonymous types, expressions | 21 | Написано |
 | namespaces, aliases, global/static using, extern alias, file types | 02, 22 | Написано |
 | partial, preprocessor, XML docs, Roslyn и source generators | 22 | Написано; есть учебный хост с проверками |
 | Span/Memory, ref struct, unsafe, fixed, stackalloc, pointers | 23 | Написано |
 | Function pointers, calling conventions, inline arrays, sizeof | 23, 55 | Основы написаны; полный interop в 55 |
-| C# 13–14 и совместимость версий | 24 | Написано; конкурентность Lock в 32 |
-| async/await, awaitables, Task/ValueTask, async streams | 31 | План |
-| lock, memory model, volatile, Interlocked | 32 | План |
+| C# 13–14 и совместимость версий | 24 | Написано; конкурентность Lock проверена в 32 |
+| async/await, awaitables, Task/ValueTask, async streams | 31 | Написано и проверено |
+| lock, memory model, volatile, Interlocked | 32 | Написано; Lock/Interlocked и гонки проверены |
 | Interop, extern methods, marshaling, native ownership | 55 | План |
 
 ## Что находится за пределами синтаксиса
 
 Работа с JSON, датами, HTTP, DI и журналами написана в 25–30 и проверяется в L03.
+Ограниченная конкурентность, Channels, BackgroundService и измерения написаны в 31–35 и проверяются в L04.
 Проверки, проектирование и инструменты — в 36–39; SQL и persistence — в 40–43;
 веб и сервисы — в 44–49; UI, игры и вычисления — в 50–54.
 Поставка и эксплуатация — в 55–60.

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../PipelineWorker/PipelineWorker.csproj" />
+    <ProjectReference Include="../AsyncLab/AsyncLab.csproj" />
+  </ItemGroup>
+</Project>

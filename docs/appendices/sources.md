@@ -94,3 +94,20 @@ PDF собирается из Markdown с помощью
 Доступность конкретных версий сверена с официальным NuGet flat-container index, затем выполнены restore,
 сборка и контрактные проверки. Номера пакетов Host и Resilience имеют разные циклы выпуска.
 Полный список прямых зависимостей и команды — в [примерах интеграций](../../examples/Integration/README.md).
+
+## Источники и измерения глав 31–35
+
+| Область | Первичный источник |
+| --- | --- |
+| Task и композиция | [Async](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/), [WhenAll](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.whenall?view=net-10.0) |
+| Контексты продолжений | [ConfigureAwait FAQ](https://devblogs.microsoft.com/dotnet/configureawait-faq/) |
+| Синхронизация | [lock](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/lock), [модель памяти](https://github.com/dotnet/runtime/blob/main/docs/design/specs/Memory-model.md) |
+| Очереди и потоки данных | [Channels](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels), [Dataflow](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/dataflow-task-parallel-library) |
+| Жизненный цикл | [BackgroundService в .NET 10](https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/10.0/backgroundservice-executeasync-task), [scope](https://learn.microsoft.com/en-us/dotnet/core/extensions/scoped-service) |
+| BenchmarkDotNet 0.15.8 | [Руководство](https://benchmarkdotnet.org/articles/guides/getting-started.html) |
+| dotnet diagnostics 10.0.750501 | [counters](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-counters), [trace](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace), [dump](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-dump) |
+
+Пакеты закреплены в csproj/lock-файлах; диагностические инструменты устанавливаются локально по точной версии.
+BenchmarkDotNet, trace и counters действительно запускались; для dump проверены установка и версия,
+снятие/анализ дампа не выполнялись. Числа измерений относятся только к описанной среде и нагрузке.
+Сохранённые результаты связаны с [главой 34](../05-concurrency/34-performance.md).

@@ -118,6 +118,10 @@ def main():
             require(integration.returncode == 0 and not integration.stderr,
                     integration.stdout + integration.stderr)
             print(integration.stdout.strip())
+            pipeline = run([sys.executable, "-B", str(ROOT / "tools/verify_pipeline.py"), "--no-build"],
+                           timeout=240)
+            require(pipeline.returncode == 0 and not pipeline.stderr, pipeline.stdout + pipeline.stderr)
+            print(pipeline.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

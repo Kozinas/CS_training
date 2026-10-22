@@ -1,0 +1,9 @@
+Top 8 Functions (Exclusive)                                                  Inclusive           Exclusive
+1. Thread.<PollGC>g__PollGCWorker|70_0()                                     31.29%              31.29%
+2. String.SplitInternal(value class System.ReadOnlySpan`1<wchar>,int32,va    23.89%              19.78%
+3. Number.TryParseNumber(!!0*&,!!0*,value class System.Globalization.Numb    17.61%              17.52%
+4. AmountAlgorithms.SplitSum(class System.String[])                          64.11%              10.16%
+5. Number.TryNumberToDecimal(value class NumberBuffer&,value class System    7.47%               7.47%
+6. AsyncLab!Program+<<Main>$>d__0.MoveNext()                                 99.56%              3.43%
+7. Number.TryParseDecimal(value class System.ReadOnlySpan`1<!!0>,value cl    28.08%              2.92%
+8. SpanHelpers.Memmove(unsigned int8&,unsigned int8&,unsigned int)           2.9%                2.9%

@@ -3,5 +3,10 @@
   <Project Path="BclLab/BclLab.csproj" />
   <Project Path="ImportCli/ImportCli.csproj" />
   <Project Path="IntegrationChecks/IntegrationChecks.csproj" />
+  <Project Path="PipelineCore/PipelineCore.csproj" />
+  <Project Path="PipelineWorker/PipelineWorker.csproj" />
+  <Project Path="AsyncLab/AsyncLab.csproj" />
+  <Project Path="PipelineChecks/PipelineChecks.csproj" />
+  <Project Path="PerfLab/PerfLab.csproj" />
   <Project Path="../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
 </Solution>

@@ -7,10 +7,10 @@
 [Полная программа из 60 глав](PLAN.md) · [Ход наполнения](PROGRESS.md) ·
 [Результаты проверок](VALIDATION.md)
 
-**Готовы главы 01–30, 90 заданий A/B/C и лабораторные L01–L03.**
-Главы 31–60 подробно спланированы, но ещё не наполнены учебным текстом.
-Первые четыре блока ведут от запуска программы к библиотеке правил и импортёру с HTTP, настройками и checkpoint.
-Дальнейший маршрут включает async, тесты, SQL, ASP.NET Core, UI, игры и поставку приложения.
+**Готовы главы 01–35, 105 заданий A/B/C и лабораторные L01–L04.**
+Главы 36–60 подробно спланированы, но ещё не наполнены учебным текстом.
+Пять блоков ведут от первой программы к библиотеке правил, импортёру и ограниченному фоновому конвейеру.
+Дальнейший маршрут включает тесты, SQL, ASP.NET Core, UI, игры и поставку приложения.
 
 ## Начать обучение
 
@@ -20,6 +20,7 @@
 4. Сдайте [L01](labs/01-expense-ledger/README.md), пройдите главы 11–18 и выполните [L02](labs/02-domain-library/README.md).
 5. Пройдите [блок CLR и полного языка](docs/03-runtime/19-assemblies.md), выполните практику 19–24.
 6. Изучите [библиотеки и внешние данные](docs/04-libraries/25-collections.md) и сдайте [L03](labs/03-import-tool/README.md).
+7. Пройдите [async, потоки и производительность](docs/05-concurrency/31-async.md) и сдайте [L04](labs/04-background-pipeline/README.md).
 
 ```powershell
 dotnet run --project examples/Foundations -- 01
@@ -28,7 +29,7 @@ python tools/verify.py
 ```
 
 Для примеров нужен .NET 10 SDK, для скриптов — Python 3.10+.
-Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–30 нужен первый restore из nuget.org;
+Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–35 нужен первый restore из nuget.org;
 версии и полный граф зависимостей закреплены. [Описание примеров](examples/README.md).
 Проверить только 01–24 без внешних пакетов: `python tools/verify.py --core-only`.
 
@@ -85,11 +86,20 @@ python tools/verify.py
 - [29. Host, DI, настройки и журналы](docs/04-libraries/29-host.md)
 - [30. Практикум утилиты импорта](docs/04-libraries/30-import.md)
 
+### V. Асинхронность, потоки и производительность
+
+- [31. Task и async await](docs/05-concurrency/31-async.md)
+- [32. Потоки и синхронизация](docs/05-concurrency/32-synchronization.md)
+- [33. Параллельные конвейеры](docs/05-concurrency/33-pipelines.md)
+- [34. Измерение и оптимизация](docs/05-concurrency/34-performance.md)
+- [35. Практикум фонового обработчика](docs/05-concurrency/35-worker.md)
+
 ### Лабораторные работы
 
 - [L01. Консольный журнал расходов](labs/01-expense-ledger/README.md)
 - [L02. Библиотека правил и отчётов](labs/02-domain-library/README.md)
 - [L03. Воспроизводимая утилита импорта](labs/03-import-tool/README.md)
+- [L04. Ограниченный фоновый конвейер](labs/04-background-pipeline/README.md)
 
 ### Приложения
 
