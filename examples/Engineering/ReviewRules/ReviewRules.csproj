@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>CSharpCourse.ReviewRules</PackageId>
+    <Version>1.1.0</Version>
+    <Authors>CSharpCourse contributors</Authors>
+    <Description>Educational expense approval rules; local packaging exercise.</Description>
+    <PackageReadmeFile>PACKAGE.md</PackageReadmeFile>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+  <ItemGroup><None Include="PACKAGE.md" Pack="true" PackagePath="/" /></ItemGroup>
+</Project>

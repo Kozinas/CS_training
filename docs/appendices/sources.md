@@ -111,3 +111,25 @@ PDF собирается из Markdown с помощью
 BenchmarkDotNet, trace и counters действительно запускались; для dump проверены установка и версия,
 снятие/анализ дампа не выполнялись. Числа измерений относятся только к описанной среде и нагрузке.
 Сохранённые результаты связаны с [главой 34](../05-concurrency/34-performance.md).
+
+## Источники и пакеты глав 36–39
+
+| Область / пакет | Проверенная версия | Первичный источник |
+| --- | --- | --- |
+| xunit.v3.mtp-v2 | 4.0.2 | [Начало работы](https://xunit.net/docs/getting-started/v3/getting-started), [MTP](https://xunit.net/docs/getting-started/v3/microsoft-testing-platform) |
+| Microsoft.Testing.Extensions.CodeCoverage | 18.12.0 | [Coverage](https://xunit.net/docs/getting-started/v3/code-coverage-with-mtp) |
+| Microsoft.Testing.Extensions.TrxReport | 2.5.1 | [dotnet test](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-test) |
+| Microsoft.Extensions.TimeProvider.Testing | 10.11.0 | [FakeTimeProvider](https://learn.microsoft.com/en-us/dotnet/core/extensions/timeprovider-testing) |
+| NSubstitute | 6.2.0 | [Создание подмен](https://nsubstitute.github.io/help/creating-a-substitute/) |
+| Testcontainers.PostgreSql | 4.16.0 | [Модуль PostgreSQL](https://dotnet.testcontainers.org/modules/postgres/) |
+| Npgsql | 10.0.3 | [Основы](https://www.npgsql.org/doc/basic-usage.html) |
+| NuGet / MSBuild | SDK 10.0.402 | [CPM](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management), [lock](https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) |
+| Git / версии API | Версия API — учебная 1.1.0 | [Merge](https://git-scm.com/docs/git-merge), [SemVer](https://semver.org/) |
+| GitHub Actions | Actions закреплены SHA | [CI для .NET](https://docs.github.com/en/actions/tutorials/build-and-test-code/net) |
+
+Версии проверены через NuGet и locked restore на 22 октября 2026. CPM и пять новых lock-файлов
+находятся в [Engineering](../../examples/Engineering/README.md). Для PostgreSQL закреплён digest образа;
+контейнерный проект скомпилирован, но выполнение в среде выпуска не проверено из-за отсутствующего daemon.
+NUnit/MSTest, [FsCheck](https://fscheck.github.io/FsCheck/) и
+[Stryker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/) даны как альтернативы/углубление,
+без заявления об их отдельном запуске. Контролируемая мутация дедлайна выполнена собственным скриптом.

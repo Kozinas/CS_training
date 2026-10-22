@@ -122,6 +122,10 @@ def main():
                            timeout=240)
             require(pipeline.returncode == 0 and not pipeline.stderr, pipeline.stdout + pipeline.stderr)
             print(pipeline.stdout.strip())
+            engineering = run([sys.executable, "-B", str(ROOT / "tools/verify_engineering.py")], timeout=360)
+            require(engineering.returncode == 0 and not engineering.stderr,
+                    engineering.stdout + engineering.stderr)
+            print(engineering.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

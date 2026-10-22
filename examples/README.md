@@ -1,8 +1,9 @@
 # Запускаемые примеры C#
 
-Примеры относятся к главам 01–35. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
+Примеры относятся к главам 01–39. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
 Главы 25–35 используют [Integration.slnx](Integration/Integration.slnx); команды и пакеты описаны в
-[Integration/README](Integration/README.md).
+[Integration/README](Integration/README.md). Главы 36–39 используют [Engineering.slnx](Engineering/Engineering.slnx);
+[Engineering/README](Engineering/README.md) описывает xUnit, MTP, NuGet-пакет и отдельный контейнерный тест.
 Она независима от пользовательского ConsoleApp1 в корне.
 
 ## Запуск

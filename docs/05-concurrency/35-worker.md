@@ -147,4 +147,4 @@ scope на работу, последовательная фиксация об�
 Готовый пример выполняет одну работу и этот daemon-режим не реализует.
 
 [Назад: 34](34-performance.md) · [Лабораторная L04](../../labs/04-background-pipeline/README.md) ·
-[Подсказки](../appendices/hints.md) · [Следующий блок в плане](../../PLAN.md)
+[Подсказки](../appendices/hints.md) · [Далее: 36](../06-engineering/36-testing.md)

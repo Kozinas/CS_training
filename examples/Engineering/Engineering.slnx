@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="ReviewRules/ReviewRules.csproj" />
+  <Project Path="ReviewRules.Tests/ReviewRules.Tests.csproj" />
+  <Project Path="ReviewDemo/ReviewDemo.csproj" />
+  <Project Path="Integration.Tests/Integration.Tests.csproj" />
+  <Project Path="../ExpenseLedger.Core/ExpenseLedger.Core.csproj" />
+  <Project Path="../ExpenseLedger.Memory/ExpenseLedger.Memory.csproj" />
+  <Project Path="../Integration/InputFormats/InputFormats.csproj" />
+  <Project Path="../Integration/ImportCli/ImportCli.csproj" />
+</Solution>

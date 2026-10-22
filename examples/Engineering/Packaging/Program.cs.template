@@ -1,0 +1,7 @@
+using Course.Review;
+
+var policy = ApprovalPolicy.Standard();
+var submitted = new DateTimeOffset(2026, 1, 10, 12, 0, 0, TimeSpan.Zero);
+Console.WriteLine(policy.Evaluate(1000m, "food", submitted, submitted));
+Console.WriteLine(policy.Evaluate(1000m, "food", submitted, submitted.AddMinutes(30)));
+Console.WriteLine(policy.Evaluate(1000.01m, "food", submitted, submitted));
