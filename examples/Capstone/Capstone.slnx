@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BudgetRules/BudgetRules.csproj" />
+  <Project Path="AcceptanceChecks/AcceptanceChecks.csproj" />
+</Solution>

@@ -213,3 +213,17 @@ Redis, RabbitMQ/MassTransit, Quartz/Hangfire и внешний OIDC описан
 В локальном выпуске выполнены 87 сценарных проверок и 36/19 проверок совместимости. SDK-style net48
 не выдаётся за конвертацию произвольного старого csproj. Секреты и опубликованные бинарные каталоги
 не включаются в учебный Git-репозиторий; manifest создаётся локальным инструментом поставки.
+
+## Источники и проверка итогового блока 59–60
+
+Capstone использует .NET SDK 10.0.402 / C# 14 и BCL, без новых внешних пакетов.
+Опорное правило прошло 47 проверок, включая 12 независимых наборов в трёх культурах,
+одноразовое перечисление, disposal и воспроизводимую гонку. Две намеренные мутации обнаружены
+по ожидаемым причинам. Это проверка учебного комплекта; интеграцию L08 и её защиту выполняет учащийся.
+
+| Тема | Первичный источник |
+| --- | --- |
+| Архитектурные решения | [ADR: контекст, выбор и последствия](https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architecture-decision-record) |
+| Конкурентное изменение БД | [EF Core concurrency](https://learn.microsoft.com/en-us/ef/core/saving/concurrency), [transactions](https://learn.microsoft.com/en-us/ef/core/saving/transactions) |
+| Повторное перечисление | [CA1851](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1851) |
+| Самостоятельная проверка языка | [Спецификация C#](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/), [API .NET](https://learn.microsoft.com/en-us/dotnet/api/) |

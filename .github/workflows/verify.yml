@@ -57,5 +57,6 @@ jobs:
             .artifacts/delivery/summary.json
             .artifacts/delivery/publication.json
             .artifacts/delivery/incidents.json
+            .artifacts/capstone/summary.json
           include-hidden-files: true
           retention-days: 7

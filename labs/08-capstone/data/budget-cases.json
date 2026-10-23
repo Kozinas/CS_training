@@ -1,0 +1,14 @@
+[
+  {"name":"under","limitMinor":2000,"spentMinor":1250,"incomingMinor":[500],"allowed":true,"proposedMinor":1750,"remainingMinor":250},
+  {"name":"exact","limitMinor":2000,"spentMinor":1250,"incomingMinor":[250,500],"allowed":true,"proposedMinor":2000,"remainingMinor":0},
+  {"name":"one-over","limitMinor":2000,"spentMinor":1250,"incomingMinor":[751],"allowed":false,"proposedMinor":2001,"remainingMinor":0},
+  {"name":"empty-zero","limitMinor":0,"spentMinor":0,"incomingMinor":[],"allowed":true,"proposedMinor":0,"remainingMinor":0},
+  {"name":"full-replay","limitMinor":2000,"spentMinor":2000,"incomingMinor":[],"allowed":true,"proposedMinor":2000,"remainingMinor":0},
+  {"name":"negative-limit","limitMinor":-1,"spentMinor":0,"incomingMinor":[],"error":"ArgumentOutOfRangeException"},
+  {"name":"negative-spent","limitMinor":2000,"spentMinor":-1,"incomingMinor":[],"error":"ArgumentOutOfRangeException"},
+  {"name":"invalid-state","limitMinor":2000,"spentMinor":2001,"incomingMinor":[],"error":"ArgumentOutOfRangeException"},
+  {"name":"zero-expense","limitMinor":2000,"spentMinor":0,"incomingMinor":[0],"error":"ArgumentOutOfRangeException"},
+  {"name":"oversized-expense","limitMinor":200000000,"spentMinor":0,"incomingMinor":[100000000],"error":"ArgumentOutOfRangeException"},
+  {"name":"overflow","limitMinor":9223372036854775807,"spentMinor":9223372036854775757,"incomingMinor":[99],"error":"OverflowException"},
+  {"name":"invalid-after-over","limitMinor":10,"spentMinor":0,"incomingMinor":[11,-1],"error":"ArgumentOutOfRangeException"}
+]

@@ -1,6 +1,6 @@
 # Запускаемые примеры C#
 
-Примеры относятся к главам 01–58. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
+Примеры относятся к главам 01–60. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
 Главы 25–35 используют [Integration.slnx](Integration/Integration.slnx); команды и пакеты описаны в
 [Integration/README](Integration/README.md). Главы 36–39 используют [Engineering.slnx](Engineering/Engineering.slnx);
 [Engineering/README](Engineering/README.md) описывает xUnit, MTP, NuGet-пакет и отдельный контейнерный тест.
@@ -95,3 +95,10 @@ WPF исполняется на Windows. Godot всегда компилируе
 FDD/SC-trimmed/AOT и проверяет L07 на релизах прежних API и Blazor.
 Нужны Windows x64, Framework 4.8+ и C++ workload Visual Studio для AOT.
 Скрипт не устанавливает сервисы, не запускает Docker и не развёртывает приложение вне компьютера.
+
+## Итоговая работа 59–60
+
+[Capstone](Capstone/README.md) содержит правило бюджета, независимые случаи, одноразовый источник
+и опыт конкурентного commit. Проверка: `python tools/verify_capstone.py`. Два проекта без внешних
+пакетов проходят 47 проверок; verifier также обнаруживает два намеренных дефекта.
+Интеграция правила в API/БД/клиент является самостоятельной L08.
