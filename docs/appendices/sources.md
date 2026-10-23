@@ -1,6 +1,6 @@
 # Источники и версии
 
-База курса — C# 14 и .NET 10. Дата сверки: 22 октября 2026. Учебные объяснения и задания
+База курса — C# 14 и .NET 10. Дата последнего дополнения: 23 октября 2026. Учебные объяснения и задания
 написаны самостоятельно; книги используются как дополнительное чтение.
 Содержимое папки Books не включается в PDF курса.
 
@@ -171,3 +171,24 @@ NUnit/MSTest, [FsCheck](https://fscheck.github.io/FsCheck/) и
 в [Web](../../examples/Web/README.md). EF Core/Sqlite/Design и dotnet-ef — 10.0.13;
 xUnit/MTP — 4.0.2 и TrxReport — 2.5.1. Веб-пример использует настоящие Identity и SQLite.
 Redis, RabbitMQ/MassTransit, Quartz/Hangfire и внешний OIDC описаны как продолжения, без заявления об их запуске.
+
+## Источники и пакеты глав 50–54
+
+| Область / пакет | Проверенная граница | Первичный источник |
+| --- | --- | --- |
+| WPF | net10.0-windows, XAML/dispatcher | [Binding](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/data/), [потоки](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/advanced/threading-model) |
+| CommunityToolkit.Mvvm | 8.4.2 | [AsyncRelayCommand](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/asyncrelaycommand) |
+| Blazor | ASP.NET Core 10, Interactive Server | [Render modes](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/render-modes?view=aspnetcore-10.0), [lifecycle](https://learn.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle?view=aspnetcore-10.0) |
+| bUnit | 2.12.5 | [Компонентные тесты](https://bunit.dev/docs/getting-started/writing-tests.html) |
+| MAUI | Теория и практика оболочки; ядро net10.0 проверено | [Платформы](https://learn.microsoft.com/en-us/dotnet/maui/supported-platforms?view=net-maui-10.0), [SecureStorage](https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/storage/secure-storage?view=net-maui-10.0) |
+| Microsoft.Data.Sqlite | 10.0.13; offline-очередь | [Транзакции](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/transactions) |
+| Unity | 6000.0 как граница сравнения; Editor не запускался | [Компилятор](https://docs.unity3d.com/6000.0/Documentation/Manual/csharp-compiler.html), [сериализация](https://docs.unity3d.com/6000.0/Documentation/Manual/script-serialization-rules.html) |
+| Godot.NET.Sdk / движок | 4.6.2 .NET; net8.0, C# 12 | [C# в Godot 4.6](https://docs.godotengine.org/en/4.6/tutorials/scripting/c_sharp/c_sharp_basics.html) |
+| MathNet.Numerics | 5.0.0 | [Statistics](https://numerics.mathdotnet.com/api/MathNet.Numerics.Statistics/Statistics.htm) |
+| SIMD | System.Numerics, scalar reference | [SIMD в .NET](https://learn.microsoft.com/en-us/dotnet/standard/simd) |
+| ML.NET / ONNX | Обзор и задания; модели не поставляются | [Train/evaluate](https://learn.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/train-machine-learning-model-ml-net), [ONNX C#](https://onnxruntime.ai/docs/tutorials/csharp/basic_csharp.html) |
+
+Версии дополнения проверены на 23 октября 2026. В [Specializations](../../examples/Specializations/README.md)
+есть восемь проектов, CPM/lock-файлы, 43 xUnit/bUnit-кейса и отдельный файл адаптера Unity.
+Общий GameRules использует netstandard2.1/C# 9. Поддержка движком отдельной версии языка не выводится
+из версии системного SDK. Workloads MAUI, Unity Editor, browser e2e и ML-модели не входят в выполненные проверки.

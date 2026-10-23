@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="ClientCore/ClientCore.csproj" />
+  <Project Path="BlazorClient/BlazorClient.csproj" />
+  <Project Path="GameRules/GameRules.csproj" />
+  <Project Path="Analysis/Analysis.csproj" />
+  <Project Path="Scenarios/Scenarios.csproj" />
+  <Project Path="Specializations.Tests/Specializations.Tests.csproj" />
+</Solution>

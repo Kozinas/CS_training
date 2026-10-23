@@ -1,0 +1,60 @@
+@implements IDisposable
+@inject IReportSource Source
+
+<EditForm Model="credentials" OnValidSubmit="Load">
+    <DataAnnotationsValidator />
+    <label for="token">Токен L06 (для демонстрации оставьте пустым)</label>
+    <InputText id="token" type="password" autocomplete="off" @bind-Value="credentials.Token" />
+    <ValidationSummary />
+    <button type="submit" disabled="@model.LoadCommand.IsRunning">Загрузить</button>
+    <button type="button" @onclick="Cancel" disabled="@(!model.LoadCommand.CanBeCanceled)">Отмена</button>
+</EditForm>
+<p role="status" aria-live="polite">@model.State</p>
+@if (model.Error.Length > 0) { <p role="alert">@model.Error</p> }
+<table>
+    <caption>Расходы по категориям</caption>
+    <thead><tr><th>Категория</th><th>Количество</th><th>Копейки</th></tr></thead>
+    <tbody>
+    @foreach (var row in model.Rows)
+    {
+        <tr @key="row.Category"><td>@row.Category</td><td>@row.Count</td><td>@row.AmountMinor</td></tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    private readonly Credentials credentials = new();
+    private ReportViewModel model = null!;
+    private bool disposed;
+
+    protected override void OnInitialized()
+    {
+        model = new(Source);
+        model.PropertyChanged += Changed;
+        model.LoadCommand.PropertyChanged += Changed;
+    }
+    private void Changed(object? sender, System.ComponentModel.PropertyChangedEventArgs args)
+    {
+        if (!disposed) _ = InvokeAsync(StateHasChanged);
+    }
+    private async Task Load()
+    {
+        if (model.LoadCommand.IsRunning) return;
+        model.Token = credentials.Token;
+        await model.LoadCommand.ExecuteAsync(null);
+    }
+    private void Cancel() => model.LoadCommand.Cancel();
+    public void Dispose()
+    {
+        disposed = true;
+        model.PropertyChanged -= Changed;
+        model.LoadCommand.PropertyChanged -= Changed;
+        model.Dispose();
+        credentials.Token = "";
+    }
+    private sealed class Credentials
+    {
+        [System.ComponentModel.DataAnnotations.StringLength(8192)]
+        public string Token { get; set; } = "";
+    }
+}

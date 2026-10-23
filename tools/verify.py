@@ -132,6 +132,10 @@ def main():
             web = run([sys.executable, "-B", str(ROOT / "tools/verify_web.py")], timeout=360)
             require(web.returncode == 0 and not web.stderr, web.stdout + web.stderr)
             print(web.stdout.strip())
+            specializations = run([sys.executable, "-B", str(ROOT / "tools/verify_specializations.py")], timeout=360)
+            require(specializations.returncode == 0 and not specializations.stderr,
+                    specializations.stdout + specializations.stderr)
+            print(specializations.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

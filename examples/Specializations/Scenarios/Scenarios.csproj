@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../ClientCore/ClientCore.csproj" />
+    <ProjectReference Include="../GameRules/GameRules.csproj" />
+    <ProjectReference Include="../Analysis/Analysis.csproj" />
+  </ItemGroup>
+</Project>

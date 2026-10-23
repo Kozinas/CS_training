@@ -52,5 +52,7 @@ jobs:
             .artifacts/web/summary.json
             .artifacts/web/load.json
             .artifacts/web/trace-sample.txt
+            .artifacts/specializations/summary.json
+            .artifacts/specializations/measurement.json
           include-hidden-files: true
           retention-days: 7

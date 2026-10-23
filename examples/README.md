@@ -1,6 +1,6 @@
 # Запускаемые примеры C#
 
-Примеры относятся к главам 01–49. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
+Примеры относятся к главам 01–54. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
 Главы 25–35 используют [Integration.slnx](Integration/Integration.slnx); команды и пакеты описаны в
 [Integration/README](Integration/README.md). Главы 36–39 используют [Engineering.slnx](Engineering/Engineering.slnx);
 [Engineering/README](Engineering/README.md) описывает xUnit, MTP, NuGet-пакет и отдельный контейнерный тест.
@@ -79,3 +79,11 @@ RuntimeLab разрешает unsafe для ограниченных приме�
 
 FileBased/hello.cs запускается SDK напрямую и проверяется отдельно от solution.
 Для него явно отключён PublishAot. Остальные проекты не включают этот исходник.
+
+## Специализации 50–54
+
+[Specializations](Specializations/README.md) содержит общее клиентское ядро, WPF, Blazor,
+SQLite-очередь для offline-синхронизации, игровые правила, Godot-сцену и Math.NET/SIMD.
+Проверка: `python tools/verify_specializations.py`; из корня репозитория.
+WPF исполняется на Windows. Godot всегда компилируется, а headless-запуск требует
+установленного Godot 4.6.2 .NET и параметра `--godot PATH`. MAUI и Unity в CI не запускаются.
