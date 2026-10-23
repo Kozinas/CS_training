@@ -136,6 +136,9 @@ def main():
             require(specializations.returncode == 0 and not specializations.stderr,
                     specializations.stdout + specializations.stderr)
             print(specializations.stdout.strip())
+            delivery = run([sys.executable, "-B", str(ROOT / "tools/verify_delivery.py")], timeout=720)
+            require(delivery.returncode == 0 and not delivery.stderr, delivery.stdout + delivery.stderr)
+            print(delivery.stdout.strip())
 
     with tempfile.TemporaryDirectory(prefix="ledger-check-", dir=artifacts) as temporary:
         folder = Path(temporary)

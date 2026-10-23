@@ -7,11 +7,11 @@
 [Полная программа из 60 глав](PLAN.md) · [Ход наполнения](PROGRESS.md) ·
 [Результаты проверок](VALIDATION.md)
 
-**Готовы главы 01–54, 162 задания A/B/C и лабораторные L01–L06.**
-Главы 55–60 подробно спланированы, но ещё не наполнены учебным текстом.
-Девять блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру,
+**Готовы главы 01–58, 174 задания A/B/C и лабораторные L01–L07.**
+Главы 59–60 подробно спланированы, но ещё не наполнены учебным текстом.
+Десять блоков ведут от первой программы к библиотеке правил, импортёру, фоновому конвейеру,
 сопровождению кода, транзакционной базе данных, веб-сервису с пользователями, UI, игровым правилам и вычислениям.
-Следующий этап — interop и поставка приложения.
+Добавлены interop, перенос legacy-кода, публикация и восстановление. Далее — итоговый проект и проверка знаний.
 
 ## Начать обучение
 
@@ -26,6 +26,7 @@
 9. Пройдите [SQL, Dapper и EF Core](docs/07-data/40-sql.md), выполните [L05](labs/05-durable-storage/README.md) на настоящей SQLite-базе.
 10. Изучите [ASP.NET Core и сервисы](docs/08-web/44-http-api.md), выполните [L06](labs/06-expense-api/README.md) с API, пользователями и фоновой доставкой.
 11. Выберите [прикладную специализацию](docs/09-specializations/50-desktop.md): WPF, Blazor, мобильную синхронизацию, игры или вычисления; выполните A/B/C глав 50–54.
+12. Пройдите [interop, перенос и поставку](docs/10-delivery/55-interop.md), выполните [L07](labs/07-client-release/README.md) с релизом API/UI, откатом и восстановлением.
 
 ```powershell
 dotnet run --project examples/Foundations -- 01
@@ -34,9 +35,10 @@ python tools/verify.py
 ```
 
 Для примеров нужен .NET 10 SDK, для скриптов — Python 3.10+.
-Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–54 нужен первый restore из nuget.org;
+Примеры 01–24 не требуют внешних NuGet-пакетов. Для 25–58 нужен первый restore из nuget.org;
 версии и полный граф зависимостей закреплены. Engineering использует SDK 10.0.402 и MTP.
 [Описание примеров](examples/README.md). Контейнерный тест главы 36 требует отдельного Linux Docker engine. L05 и L06 работают на SQLite без Docker; Web включает процессную проверку Kestrel.
+Полная проверка 55–58 рассчитана на Windows x64, Framework 4.8+ и C++ toolchain Visual Studio для Native AOT; [требования Delivery](examples/Delivery/README.md).
 Проверить только 01–24 без внешних пакетов: `python tools/verify.py --core-only`.
 
 ## Оглавление написанного материала
@@ -131,6 +133,13 @@ python tools/verify.py
 - [53. C# в игровых движках](docs/09-specializations/53-games.md)
 - [54. Вычисления и обработка данных](docs/09-specializations/54-computation.md)
 
+### X. Interop, перенос, поставка и эксплуатация
+
+- [55. Interop и специальные среды](docs/10-delivery/55-interop.md)
+- [56. Существующие проекты на .NET Framework](docs/10-delivery/56-legacy.md)
+- [57. Публикация и CI/CD](docs/10-delivery/57-publishing.md)
+- [58. Эксплуатация и разбор сбоев](docs/10-delivery/58-operations.md)
+
 ### Лабораторные работы
 
 - [L01. Консольный журнал расходов](labs/01-expense-ledger/README.md)
@@ -139,6 +148,7 @@ python tools/verify.py
 - [L04. Ограниченный фоновый конвейер](labs/04-background-pipeline/README.md)
 - [L05. Надёжное хранение расходов](labs/05-durable-storage/README.md)
 - [L06. ExpenseLedger API](labs/06-expense-api/README.md)
+- [L07. Клиент, поставка и восстановление](labs/07-client-release/README.md)
 
 ### Приложения
 

@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="InteropProbe/InteropProbe.csproj" />
+  <Project Path="PluginContracts/PluginContracts.csproj" />
+  <Project Path="SamplePlugin/SamplePlugin.csproj" />
+  <Project Path="PluginHost/PluginHost.csproj" />
+  <Project Path="LegacyRules/LegacyRules.csproj" />
+  <Project Path="PortableRules/PortableRules.csproj" />
+  <Project Path="CompatibilityProbe/CompatibilityProbe.csproj" />
+  <Project Path="LifecycleProbe/LifecycleProbe.csproj" />
+</Solution>

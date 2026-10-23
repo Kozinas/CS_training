@@ -1,7 +1,7 @@
 # Карта покрытия языка C#
 
 Карта помогает проверять полноту программы. Номер означает запланированное место темы,
-а статус показывает наличие учебного текста. **Написаны главы 01–54**; строка «план» не означает,
+а статус показывает наличие учебного текста. **Написаны главы 01–58**; строка «план» не означает,
 что тему уже можно изучить здесь. Сверка состава выполнена с
 [официальным справочником](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/)
 и [описанием C# 14](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14).
@@ -27,17 +27,17 @@
 | foreach pattern, IEnumerable, yield, iterator disposal | 15, 31 | Написано; есть проверки async-перечисления |
 | LINQ method/query syntax, IQueryable | 16 | Написано; перевод в SQL проверен в 42 |
 | Patterns, extension members, operators, indexers | 17, 24 | Написано |
-| Assemblies, IL, metadata, CLR, JIT/AOT | 01, 19 | Написано; AOT-публикация далее |
+| Assemblies, IL, metadata, CLR, JIT/AOT | 01, 19, 55, 57 | Написано; AOT-публикация проверена в 57 |
 | GC, finalization, managed/native lifetime | 20 | Написано; async-disposal и проверки в 31 |
 | Attributes, reflection, dynamic, anonymous types, expressions | 21 | Написано |
 | namespaces, aliases, global/static using, extern alias, file types | 02, 22 | Написано |
 | partial, preprocessor, XML docs, Roslyn и source generators | 22 | Написано; есть учебный хост с проверками |
 | Span/Memory, ref struct, unsafe, fixed, stackalloc, pointers | 23 | Написано |
-| Function pointers, calling conventions, inline arrays, sizeof | 23, 55 | Основы написаны; полный interop в 55 |
+| Function pointers, calling conventions, inline arrays, sizeof | 23, 55 | Написано; ABI и native ownership разобраны в 55 |
 | C# 13–14 и совместимость версий | 24 | Написано; конкурентность Lock проверена в 32 |
 | async/await, awaitables, Task/ValueTask, async streams | 31 | Написано и проверено |
 | lock, memory model, volatile, Interlocked | 32 | Написано; Lock/Interlocked и гонки проверены |
-| Interop, extern methods, marshaling, native ownership | 55 | План |
+| Interop, extern methods, marshaling, native ownership | 55 | Написано; Win32/SafeHandle и AOT проверены, COM обзорно |
 
 ## Что находится за пределами синтаксиса
 
@@ -48,7 +48,8 @@ SQL, ADO.NET/Dapper, EF Core, миграции и транзакции напи�
 Веб и сервисы написаны в 44–49 и проверены в L06: API, Identity, Razor, gRPC/SignalR и outbox.
 UI, offline-синхронизация, игровые правила и вычисления написаны в 50–54: WPF/Blazor, SQLite, Godot и Math.NET/SIMD.
 MAUI на устройстве, Unity Editor, Avalonia и модели ML/ONNX требуют отдельной практики; границы проверки указаны в главах.
-Поставка и эксплуатация — в 55–60.
+Interop, ALC, legacy/portable library, публикация и эксплуатация написаны в 55–58 и проверены в L07.
+Итоговый проект и проверка знаний — следующие главы 59–60.
 
 Таким образом, «знать язык» и «работать в C#-проекте» проверяются отдельно.
 Редкие средства, например COM или unsafe, нужны не каждой роли, но для них задан явный маршрут.

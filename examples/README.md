@@ -1,6 +1,6 @@
 # Запускаемые примеры C#
 
-Примеры относятся к главам 01–54. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
+Примеры относятся к главам 01–58. Языковая solution — [CSharpCourse.slnx](CSharpCourse.slnx) для 01–24.
 Главы 25–35 используют [Integration.slnx](Integration/Integration.slnx); команды и пакеты описаны в
 [Integration/README](Integration/README.md). Главы 36–39 используют [Engineering.slnx](Engineering/Engineering.slnx);
 [Engineering/README](Engineering/README.md) описывает xUnit, MTP, NuGet-пакет и отдельный контейнерный тест.
@@ -87,3 +87,11 @@ SQLite-очередь для offline-синхронизации, игровые 
 Проверка: `python tools/verify_specializations.py`; из корня репозитория.
 WPF исполняется на Windows. Godot всегда компилируется, а headless-запуск требует
 установленного Godot 4.6.2 .NET и параметра `--godot PATH`. MAUI и Unity в CI не запускаются.
+
+## Interop и поставка 55–58
+
+[Delivery](Delivery/README.md) содержит восемь проектов: Win32, ALC, legacy/portable rules,
+проверку двух runtime и graceful drain. `python tools/verify_delivery.py` также публикует
+FDD/SC-trimmed/AOT и проверяет L07 на релизах прежних API и Blazor.
+Нужны Windows x64, Framework 4.8+ и C++ workload Visual Studio для AOT.
+Скрипт не устанавливает сервисы, не запускает Docker и не развёртывает приложение вне компьютера.

@@ -192,3 +192,24 @@ Redis, RabbitMQ/MassTransit, Quartz/Hangfire и внешний OIDC описан
 есть восемь проектов, CPM/lock-файлы, 43 xUnit/bUnit-кейса и отдельный файл адаптера Unity.
 Общий GameRules использует netstandard2.1/C# 9. Поддержка движком отдельной версии языка не выводится
 из версии системного SDK. Workloads MAUI, Unity Editor, browser e2e и ML-модели не входят в выполненные проверки.
+
+## Источники и среда глав 55–58
+
+| Область | Версия / проверенная граница | Первичный источник |
+| --- | --- | --- |
+| LibraryImport и SafeHandle | .NET 10, Win32 x64 | [Source generation](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke-source-generation), [CreateFileW](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew) |
+| ALC | JIT-runtime, collectible context | [Выгрузка сборок](https://learn.microsoft.com/en-us/dotnet/standard/assembly/unloadability) |
+| COM | Обзор, без запуска | [COM interop](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/cominterop) |
+| Reference assemblies | Microsoft.NETFramework.ReferenceAssemblies 1.0.3 | [Пакет](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/1.0.3) |
+| Framework / portable library | net48 / netstandard2.0 / net10.0 | [Перенос](https://learn.microsoft.com/en-us/dotnet/core/porting/framework-overview), [.NET Standard](https://learn.microsoft.com/en-us/dotnet/standard/net-standard) |
+| Binding redirects / packages.config | Теория применительно к Framework | [Redirects](https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/redirect-assembly-versions), [PackageReference migration](https://learn.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference) |
+| ILCompiler / ILLink | 10.0.13, SDK 10.0.402 | [Native AOT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/), [trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/prepare-libraries-for-trimming) |
+| Publish / single-file | FDD, SC+trimmed, AOT реально запущены | [Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/), [single-file](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview) |
+| CI / Docker | GitHub-hosted Windows; Docker не запускался | [Runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners), [.NET containers](https://learn.microsoft.com/en-us/dotnet/core/docker/build-container) |
+| Lifecycle / health / backup | Host.StopAsync, Kestrel, SQLite | [Workers](https://learn.microsoft.com/en-us/dotnet/core/extensions/workers), [health](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-10.0), [backup API](https://www.sqlite.org/backup.html) |
+
+Сверка и запуск — 23 октября 2026. [Delivery](../../examples/Delivery/README.md) содержит восемь проектов
+с lock-файлами; net48 использует Framework 4.8-совместимый runtime Windows, а AOT — установленный C++ toolchain.
+В локальном выпуске выполнены 87 сценарных проверок и 36/19 проверок совместимости. SDK-style net48
+не выдаётся за конвертацию произвольного старого csproj. Секреты и опубликованные бинарные каталоги
+не включаются в учебный Git-репозиторий; manifest создаётся локальным инструментом поставки.
